@@ -1,0 +1,14 @@
+../MCUBoot/bootutil/src/bootutil_priv.h:455:1:boot_img_num_sectors	16	static
+../MCUBoot/bootutil/src/bootutil_priv.h:472:1:boot_img_sector_size	24	static
+../MCUBoot/bootutil/src/bootutil_priv.h:483:1:boot_img_sector_off	32	static
+../MCUBoot/bootutil/src/swap_move.c:51:1:find_last_idx	32	static
+../MCUBoot/bootutil/src/swap_move.c:72:1:boot_read_image_header	48	static
+../MCUBoot/bootutil/src/swap_move.c:138:1:swap_read_status_bytes	64	static
+../MCUBoot/bootutil/src/swap_move.c:214:1:boot_status_internal_off	24	static
+../MCUBoot/bootutil/src/swap_move.c:231:1:boot_slots_compatible	40	static
+../MCUBoot/bootutil/src/swap_move.c:312:1:swap_status_source	40	static
+../MCUBoot/bootutil/src/swap_move.c:353:1:boot_move_sector_up	48	static
+../MCUBoot/bootutil/src/swap_move.c:400:1:boot_swap_sectors	48	static
+../MCUBoot/bootutil/src/swap_move.c:450:1:fixup_revert	40	static
+../MCUBoot/bootutil/src/swap_move.c:489:1:swap_run	64	static
+../MCUBoot/bootutil/src/swap_move.c:562:5:app_max_size	40	static

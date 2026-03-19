@@ -1,0 +1,11 @@
+../MCUBoot/crypto/mbedtls/library/sha256.c:221:6:mbedtls_sha256_init	1
+../MCUBoot/crypto/mbedtls/library/sha256.c:226:6:mbedtls_sha256_free	2
+../MCUBoot/crypto/mbedtls/library/sha256.c:235:6:mbedtls_sha256_clone	1
+../MCUBoot/crypto/mbedtls/library/sha256.c:244:5:mbedtls_sha256_starts	3
+../MCUBoot/crypto/mbedtls/library/sha256.c:488:5:mbedtls_internal_sha256_process	5
+../MCUBoot/crypto/mbedtls/library/sha256.c:641:5:mbedtls_sha256_update	11
+../MCUBoot/crypto/mbedtls/library/sha256.c:696:5:mbedtls_sha256_finish	3
+../MCUBoot/crypto/mbedtls/library/sha256.c:874:12:mbedtls_sha256_common_self_test	13
+../MCUBoot/crypto/mbedtls/library/sha256.c:769:5:mbedtls_sha256	3
+../MCUBoot/crypto/mbedtls/library/sha256.c:961:5:mbedtls_sha256_self_test	1
+../MCUBoot/crypto/mbedtls/library/sha256.c:968:5:mbedtls_sha224_self_test	1

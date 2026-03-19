@@ -1,0 +1,6 @@
+../MCUBoot/bootutil/src/swap_misc.c:36:1:swap_erase_trailer_sectors	2
+../MCUBoot/bootutil/src/swap_misc.c:78:1:swap_scramble_trailer_sectors	2
+../MCUBoot/bootutil/src/swap_misc.c:107:1:swap_status_init	3
+../MCUBoot/bootutil/src/swap_misc.c:158:1:swap_read_status	5
+../MCUBoot/bootutil/src/swap_misc.c:210:1:swap_set_copy_done	2
+../MCUBoot/bootutil/src/swap_misc.c:227:1:swap_set_image_ok	4

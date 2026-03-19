@@ -1,0 +1,2 @@
+../MCUBoot/bootutil/src/caps.c:23:10:bootutil_get_caps	16	static
+../MCUBoot/bootutil/src/caps.c:90:10:bootutil_get_num_images	4	static

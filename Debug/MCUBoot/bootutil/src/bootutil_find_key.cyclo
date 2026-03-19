@@ -1,0 +1,5 @@
+../MCUBoot/bootutil/src/../include/bootutil/crypto/sha.h:138:19:bootutil_sha_init	1
+../MCUBoot/bootutil/src/../include/bootutil/crypto/sha.h:153:19:bootutil_sha_drop	1
+../MCUBoot/bootutil/src/../include/bootutil/crypto/sha.h:164:19:bootutil_sha_update	1
+../MCUBoot/bootutil/src/../include/bootutil/crypto/sha.h:179:19:bootutil_sha_finish	1
+../MCUBoot/bootutil/src/bootutil_find_key.c:56:5:bootutil_find_key	4

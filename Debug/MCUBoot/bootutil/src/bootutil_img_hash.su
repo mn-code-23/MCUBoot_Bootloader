@@ -1,0 +1,5 @@
+../MCUBoot/bootutil/src/../include/bootutil/crypto/sha.h:138:19:bootutil_sha_init	24	static
+../MCUBoot/bootutil/src/../include/bootutil/crypto/sha.h:153:19:bootutil_sha_drop	16	static
+../MCUBoot/bootutil/src/../include/bootutil/crypto/sha.h:164:19:bootutil_sha_update	32	static
+../MCUBoot/bootutil/src/../include/bootutil/crypto/sha.h:179:19:bootutil_sha_finish	24	static
+../MCUBoot/bootutil/src/bootutil_img_hash.c:48:1:bootutil_img_hash	160	static

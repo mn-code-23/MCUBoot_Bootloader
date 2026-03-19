@@ -1,0 +1,6 @@
+../MCUBoot/crypto/mbedtls/library/constant_time.c:68:5:mbedtls_ct_memcmp	16	static,ignoring_inline_asm
+../MCUBoot/crypto/mbedtls/library/constant_time.c:121:5:mbedtls_ct_memcmp_partial	32	static,ignoring_inline_asm
+../MCUBoot/crypto/mbedtls/library/constant_time.c:151:6:mbedtls_ct_memmove_left	24	static,ignoring_inline_asm
+../MCUBoot/crypto/mbedtls/library/constant_time.c:170:6:mbedtls_ct_memcpy_if	20	static,ignoring_inline_asm
+../MCUBoot/crypto/mbedtls/library/constant_time.c:215:6:mbedtls_ct_memcpy_offset	40	static,ignoring_inline_asm
+../MCUBoot/crypto/mbedtls/library/constant_time.c:232:6:mbedtls_ct_zeroize_if	8	static

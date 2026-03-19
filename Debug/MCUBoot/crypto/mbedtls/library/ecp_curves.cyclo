@@ -1,0 +1,12 @@
+../MCUBoot/crypto/mbedtls/library/ecp_curves.c:5248:12:ecp_mod_p448	9
+../MCUBoot/crypto/mbedtls/library/ecp_curves.c:5198:12:ecp_mod_p255	3
+../MCUBoot/crypto/mbedtls/library/ecp_curves.c:5146:12:ecp_mod_p521	4
+../MCUBoot/crypto/mbedtls/library/ecp_curves.c:5073:12:ecp_mod_p384	18
+../MCUBoot/crypto/mbedtls/library/ecp_curves.c:5314:19:ecp_mod_koblitz.constprop	8
+../MCUBoot/crypto/mbedtls/library/ecp_curves.c:5397:12:ecp_mod_p192k1	1
+../MCUBoot/crypto/mbedtls/library/ecp_curves.c:5414:12:ecp_mod_p224k1	1
+../MCUBoot/crypto/mbedtls/library/ecp_curves.c:5436:12:ecp_mod_p256k1	1
+../MCUBoot/crypto/mbedtls/library/ecp_curves.c:5015:12:ecp_mod_p224	13
+../MCUBoot/crypto/mbedtls/library/ecp_curves.c:4862:12:ecp_mod_p192	3
+../MCUBoot/crypto/mbedtls/library/ecp_curves.c:5036:12:ecp_mod_p256	14
+../MCUBoot/crypto/mbedtls/library/ecp_curves.c:4717:5:mbedtls_ecp_group_load	33

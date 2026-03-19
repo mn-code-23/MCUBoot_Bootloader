@@ -1,0 +1,2 @@
+../MCUBoot/flash_map_backend/boot_hal.c:24:6:boot_platform_quit	0	static,ignoring_inline_asm
+../MCUBoot/flash_map_backend/boot_hal.c:147:6:boot_hal_jump_to_app	48	static,ignoring_inline_asm

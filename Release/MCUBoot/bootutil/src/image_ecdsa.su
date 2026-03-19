@@ -1,0 +1,1 @@
+../MCUBoot/bootutil/src/image_ecdsa.c:43:1:bootutil_verify_sig	208	static

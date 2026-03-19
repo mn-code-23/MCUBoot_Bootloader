@@ -1,0 +1,6 @@
+../MCUBoot/bootutil/src/../include/bootutil/crypto/ecdsa.h:90:12:bootutil_import_key	48	static
+../MCUBoot/bootutil/src/../include/bootutil/crypto/ecdsa.h:488:20:bootutil_ecdsa_init	16	static
+../MCUBoot/bootutil/src/../include/bootutil/crypto/ecdsa.h:493:20:bootutil_ecdsa_drop	16	static
+../MCUBoot/bootutil/src/../include/bootutil/crypto/ecdsa.h:566:19:bootutil_ecdsa_verify	40	static
+../MCUBoot/bootutil/src/../include/bootutil/crypto/ecdsa.h:603:19:bootutil_ecdsa_parse_public_key	32	static
+../MCUBoot/bootutil/src/image_ecdsa.c:43:1:bootutil_verify_sig	192	static

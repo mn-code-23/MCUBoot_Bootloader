@@ -1,0 +1,3 @@
+../MCUBoot/bootutil/src/tlv.c:44:1:bootutil_tlv_iter_begin	32	static
+../MCUBoot/bootutil/src/tlv.c:107:1:bootutil_tlv_iter_next	32	static
+../MCUBoot/bootutil/src/tlv.c:171:1:bootutil_tlv_iter_is_prot	16	static
