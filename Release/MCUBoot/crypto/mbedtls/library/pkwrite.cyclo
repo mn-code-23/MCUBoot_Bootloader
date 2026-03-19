@@ -1,0 +1,9 @@
+../MCUBoot/crypto/mbedtls/library/pk_internal.h:86:36:mbedtls_pk_get_ec_group_id	1
+../MCUBoot/crypto/mbedtls/library/pkwrite.c:222:12:pk_write_ec_param	2
+../MCUBoot/crypto/mbedtls/library/pkwrite.c:115:12:pk_write_ec_pubkey	5
+../MCUBoot/crypto/mbedtls/library/pkwrite.c:184:12:pk_write_ec_private	2
+../MCUBoot/crypto/mbedtls/library/pkwrite.c:411:5:mbedtls_pk_write_pubkey	4
+../MCUBoot/crypto/mbedtls/library/pkwrite.c:437:5:mbedtls_pk_write_pubkey_der	15
+../MCUBoot/crypto/mbedtls/library/pkwrite.c:504:5:mbedtls_pk_write_key_der	27
+../MCUBoot/crypto/mbedtls/library/pkwrite.c:544:5:mbedtls_pk_write_pubkey_pem	3
+../MCUBoot/crypto/mbedtls/library/pkwrite.c:571:5:mbedtls_pk_write_key_pem	6

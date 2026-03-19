@@ -26,5 +26,6 @@ Core/Src \
 Core/Startup \
 Drivers/STM32L4xx_HAL_Driver/Src \
 MCUBoot/bootutil/src \
+MCUBoot/crypto/mbedtls/library \
 MCUBoot/flash_map_backend \
 

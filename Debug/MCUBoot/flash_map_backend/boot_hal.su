@@ -1,4 +1,4 @@
 ../MCUBoot/flash_map_backend/boot_hal.c:24:6:boot_platform_quit	16	static,ignoring_inline_asm
 ../MCUBoot/flash_map_backend/boot_hal.c:46:13:boot_hal_mpu_config	24	static
 ../MCUBoot/flash_map_backend/boot_hal.c:111:13:boot_hal_hw_deinit	16	static
-../MCUBoot/flash_map_backend/boot_hal.c:147:6:boot_hal_jump_to_app	32	static,ignoring_inline_asm
+../MCUBoot/flash_map_backend/boot_hal.c:149:6:boot_hal_jump_to_app	32	static,ignoring_inline_asm

@@ -1,0 +1,12 @@
+../MCUBoot/crypto/mbedtls/library/pkparse.c:471:12:pk_get_pk_alg	32	static
+E:/STM32/MCUBoot_Bootloader/MCUBoot/crypto/mbedtls/include/mbedtls/pk.h:1037:36:mbedtls_pk_rsa	16	static
+../MCUBoot/crypto/mbedtls/library/pkparse.c:389:12:pk_use_ecparams	224	static
+../MCUBoot/crypto/mbedtls/library/pkparse.c:604:12:pk_parse_key_sec1_der	64	static
+../MCUBoot/crypto/mbedtls/library/pkparse.c:742:12:pk_parse_key_pkcs8_unencrypted_der	80	static
+../MCUBoot/crypto/mbedtls/library/pkparse.c:865:29:mbedtls_pk_parse_key_pkcs8_encrypted_der	96	static
+../MCUBoot/crypto/mbedtls/library/pkparse.c:517:5:mbedtls_pk_parse_subpubkey	56	static
+../MCUBoot/crypto/mbedtls/library/pkparse.c:973:5:mbedtls_pk_parse_key	72	static
+../MCUBoot/crypto/mbedtls/library/pkparse.c:1180:5:mbedtls_pk_parse_public_key	72	static
+../MCUBoot/crypto/mbedtls/library/pkparse.c:1298:5:mbedtls_pk_load_file	24	static
+../MCUBoot/crypto/mbedtls/library/pkparse.c:1347:5:mbedtls_pk_parse_keyfile	56	static
+../MCUBoot/crypto/mbedtls/library/pkparse.c:1374:5:mbedtls_pk_parse_public_keyfile	32	static

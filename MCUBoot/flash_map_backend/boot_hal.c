@@ -110,6 +110,8 @@ static void boot_hal_mpu_config(void)
  * ================================================================ */
 static void boot_hal_hw_deinit(void)
 {
+    MCUBOOT_LOG_INF("Hardware déinitialisé — prêt pour le saut");
+
 	HAL_Delay(200);
 
     /* Arrêter SysTick — l'application le reconfigurera */
@@ -127,7 +129,7 @@ static void boot_hal_hw_deinit(void)
     /* L'application reconfigure son horloge via SystemInit() */
     HAL_RCC_DeInit();
 
-    MCUBOOT_LOG_INF("Hardware déinitialisé — prêt pour le saut");
+//    MCUBOOT_LOG_INF("Hardware déinitialisé — prêt pour le saut");
 }
 
 /* ================================================================
@@ -180,6 +182,7 @@ void boot_hal_jump_to_app(uint32_t app_start)
     MCUBOOT_LOG_INF("SP app        = 0x%08X", app_sp);
     MCUBOOT_LOG_INF("Reset handler = 0x%08X", app_reset_vector);
 
+    HAL_Delay(100);
     /* ----------------------------------------------------------
      * Configuration MPU avant de passer la main à l'application
      * ---------------------------------------------------------- */

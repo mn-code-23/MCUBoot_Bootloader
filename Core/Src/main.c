@@ -114,6 +114,8 @@ int main(void)
   MX_USART2_UART_Init();
   MX_UART4_Init();
 
+  HAL_Delay(2000);
+
   /* ----------------------------------------------------------
     * 2. Bannière de démarrage
     * ---------------------------------------------------------- */
@@ -156,9 +158,12 @@ int main(void)
       * 5. Analyse du résultat
       * ---------------------------------------------------------- */
    if (boot_result != 0) {
+	   char msg[] = "Erreur !\r\n";
 	    while (1) {
 	        MCUBOOT_LOG_ERR("boot_go() ECHEC code=%d - Signature invalide ?",
 	                        boot_result);
+//	        HAL_Delay(1000);
+	        HAL_UART_Transmit(&huart4, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
 	        HAL_Delay(1000);
 	    }
 //       MCUBOOT_LOG_ERR("boot_go() ÉCHEC (code=%d)", boot_result);
