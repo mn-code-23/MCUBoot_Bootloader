@@ -1,4 +1,4 @@
 ../MCUBoot/flash_map_backend/boot_hal.c:24:6:boot_platform_quit	1
 ../MCUBoot/flash_map_backend/boot_hal.c:46:13:boot_hal_mpu_config	1
 ../MCUBoot/flash_map_backend/boot_hal.c:111:13:boot_hal_hw_deinit	2
-../MCUBoot/flash_map_backend/boot_hal.c:149:6:boot_hal_jump_to_app	5
+../MCUBoot/flash_map_backend/boot_hal.c:150:6:boot_hal_jump_to_app	5

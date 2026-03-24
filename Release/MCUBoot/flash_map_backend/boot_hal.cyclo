@@ -1,2 +1,2 @@
 ../MCUBoot/flash_map_backend/boot_hal.c:24:6:boot_platform_quit	1
-../MCUBoot/flash_map_backend/boot_hal.c:149:6:boot_hal_jump_to_app	4
+../MCUBoot/flash_map_backend/boot_hal.c:150:6:boot_hal_jump_to_app	2

@@ -12,8 +12,8 @@
 ../MCUBoot/flash_map_backend/flash_map_backend.c:374:10:flash_sector_get_off	1
 ../MCUBoot/flash_map_backend/flash_map_backend.c:379:10:flash_sector_get_size	1
 ../MCUBoot/flash_map_backend/flash_map_backend.c:392:5:flash_area_get_sector	4
-../MCUBoot/flash_map_backend/flash_map_backend.c:416:5:flash_area_get_sectors	9
+../MCUBoot/flash_map_backend/flash_map_backend.c:416:5:flash_area_get_sectors	6
 ../MCUBoot/flash_map_backend/flash_map_backend.c:459:5:flash_area_id_from_multi_image_slot_hook	5
 ../MCUBoot/flash_map_backend/flash_map_backend.c:485:5:flash_area_id_from_multi_image_slot	1
-../MCUBoot/flash_map_backend/flash_map_backend.c:496:5:flash_area_to_sectors	9
+../MCUBoot/flash_map_backend/flash_map_backend.c:496:5:flash_area_to_sectors	6
 ../MCUBoot/flash_map_backend/flash_map_backend.c:537:5:flash_area_id_from_image_slot	1

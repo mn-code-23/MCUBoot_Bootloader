@@ -146,34 +146,36 @@ static void boot_hal_hw_deinit(void)
  * app_start : adresse de début du Slot 0 + offset header MCUBoot
  *             = 0x08020000 + 0x400 = 0x08020400
  * ================================================================ */
+
 void boot_hal_jump_to_app(uint32_t app_start)
 {
-    /* Pointeur de fonction vers le Reset Handler de l'application */
     typedef void (*app_reset_handler_t)(void);
     app_reset_handler_t app_reset_handler;
+    uint32_t app_sp;
+    uint32_t app_reset_vector;
 
-    uint32_t app_sp;              /* Stack Pointer initial de l'app */
-    uint32_t app_reset_vector;    /* Adresse du Reset Handler       */
-
-    MCUBOOT_LOG_INF("Saut vers l'application à 0x%08X", app_start);
-
-    /* ----------------------------------------------------------
-     * Vérification de sanité : le vecteur de reset doit pointer
-     * dans la plage valide de la Flash (Slot 0)
-     * ---------------------------------------------------------- */
     app_sp           = *(volatile uint32_t *)(app_start);
     app_reset_vector = *(volatile uint32_t *)(app_start + 4);
 
-    /* Le SP doit pointer dans la RAM (0x20000000 → 0x2008FFFF) */
-    if (app_sp < 0x20000000 || app_sp > 0x2008FFFF) {
+    /* ================================================================
+     * Vérification Stack Pointer
+     *
+     * STM32L4R5VGT6 — SRAM totale 640 Ko :
+     *   SRAM1 : 0x20000000 → 0x2002FFFF (192 Ko)
+     *   SRAM2 : 0x20030000 → 0x2003FFFF  (64 Ko)
+     *   SRAM3 : 0x20040000 → 0x2009FFFF (384 Ko)
+     *
+     * Le SP peut pointer n'importe où dans cette plage.
+     * ================================================================ */
+    if (app_sp < 0x20000000UL || app_sp > 0x2009FFFFUL) {
         MCUBOOT_LOG_ERR("SP invalide : 0x%08X — image corrompue ?",
                         app_sp);
         boot_platform_quit(NULL);
         return;
     }
 
-    /* Le Reset Handler doit pointer dans le Slot 0 */
-    if (app_reset_vector < 0x08020400 || app_reset_vector > 0x0807FFFF) {
+    /* Vérification Reset Handler dans le Slot 0 */
+    if (app_reset_vector < 0x08020400UL || app_reset_vector > 0x0807FFFFUL) {
         MCUBOOT_LOG_ERR("Reset vector invalide : 0x%08X", app_reset_vector);
         boot_platform_quit(NULL);
         return;
@@ -182,43 +184,21 @@ void boot_hal_jump_to_app(uint32_t app_start)
     MCUBOOT_LOG_INF("SP app        = 0x%08X", app_sp);
     MCUBOOT_LOG_INF("Reset handler = 0x%08X", app_reset_vector);
 
-    HAL_Delay(100);
-    /* ----------------------------------------------------------
-     * Configuration MPU avant de passer la main à l'application
-     * ---------------------------------------------------------- */
-    boot_hal_mpu_config();
+    /* Délai flush UART avant deinit */
+//    HAL_Delay(100);
+    HAL_IWDG_Refresh(&hiwdg);
 
-    /* ----------------------------------------------------------
-     * Déinitialisation du hardware
-     * ---------------------------------------------------------- */
+    boot_hal_mpu_config();
+    HAL_MPU_Disable();
     boot_hal_hw_deinit();
 
-    /* ----------------------------------------------------------
-     * Séquence de saut — à partir d'ici, aucune interruption,
-     * aucun retour possible.
-     * ---------------------------------------------------------- */
-
-    /* 1. Désactiver toutes les interruptions (PRIMASK = 1) */
     __disable_irq();
-
-    /* 2. Mettre à jour le VTOR vers la table de vecteurs de l'app
-     *    Le VTOR doit être aligné sur 512 octets minimum (Cortex-M4)
-     *    0x08020000 est aligné sur 128 Ko → OK */
     SCB->VTOR = app_start & SCB_VTOR_TBLOFF_Msk;
-
-    /* 3. Assurer la visibilité mémoire des registres modifiés */
     __DSB();
     __ISB();
-
-    /* 4. Charger le Stack Pointer initial de l'application */
     __set_MSP(app_sp);
-
-    /* 5. Construire le pointeur vers le Reset Handler (bit 0 = 1 pour Thumb) */
     app_reset_handler = (app_reset_handler_t)(app_reset_vector | 0x01);
-
-    /* 6. SAUT — cette ligne est la dernière exécutée par le bootloader */
     app_reset_handler();
 
-    /* Ne doit jamais être atteint */
     while (1) { __NOP(); }
 }

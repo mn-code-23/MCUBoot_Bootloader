@@ -60,7 +60,7 @@ void SystemClock_Config(void);
 int _write(int file, char *ptr, int len)
 {
     (void)file;
-    HAL_UART_Transmit(&huart4, (uint8_t *)ptr, (uint16_t)len, 100);
+    HAL_UART_Transmit(&huart4, (uint8_t *)ptr, (uint16_t)len, 1000);
     return len;
 }
 /* USER CODE BEGIN PFP */
@@ -79,15 +79,16 @@ int _write(int file, char *ptr, int len)
 
 void mcuboot_watchdog_feed(void)
 {
-    HAL_IWDG_Refresh(&hiwdg);
+//    HAL_IWDG_Refresh(&hiwdg);
 }
+
 
 int main(void)
 {
-	  struct boot_rsp boot_response;
-	  /*fih_ret         boot_result = FIH_FAILURE; */
-	  int             boot_result;
-	  uint32_t        app_start;
+  struct boot_rsp boot_response;
+  int             boot_result;
+  uint32_t        app_start;
+
   /* USER CODE BEGIN 1 */
 
   /* USER CODE END 1 */
@@ -96,7 +97,7 @@ int main(void)
 
   /* Reset of all peripherals, Initializes the Flash interface and the Systick. */
   HAL_Init();
-
+//  setbuf(stdout, NULL);
   /* USER CODE BEGIN Init */
 
   /* USER CODE END Init */
@@ -110,11 +111,12 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_IWDG_Init();
+//  MX_IWDG_Init();
   MX_USART2_UART_Init();
   MX_UART4_Init();
 
-  HAL_Delay(2000);
+  HAL_Delay(500);
+  HAL_IWDG_Refresh(&hiwdg);
 
   /* ----------------------------------------------------------
     * 2. Bannière de démarrage
@@ -124,8 +126,6 @@ int main(void)
    MCUBOOT_LOG_INF(" MCUBoot v2.1.0 / ECDSA-P256");
    MCUBOOT_LOG_INF("========================================");
 
-   HAL_Delay(500);
-
    /* Vérification image */
    MCUBOOT_LOG_INF("Verification de l image en cours...");
 
@@ -133,7 +133,7 @@ int main(void)
     * 3. Nourrir le watchdog avant une opération longue
     * ---------------------------------------------------------- */
    HAL_IWDG_Refresh(&hiwdg);
-
+//   HAL_Delay(2000);
    /*
       * mcuboot_watchdog_feed()
       * Appelée par MCUBoot pendant les opérations longues (swap, erase).
@@ -151,29 +151,22 @@ int main(void)
        *           → Redémarre depuis le Slot 0 mis à jour
        *      d) Remplit boot_response avec l'adresse de démarrage
    * ---------------------------------------------------------- */
-   MCUBOOT_LOG_INF("Vérification de l'image en cours...");
+//   MCUBOOT_LOG_INF("Vérification de l'image en cours...");
 
    boot_result = boot_go(&boot_response);
+   HAL_IWDG_Refresh(&hiwdg);
      /* ----------------------------------------------------------
       * 5. Analyse du résultat
       * ---------------------------------------------------------- */
    if (boot_result != 0) {
-	   char msg[] = "Erreur !\r\n";
-	    while (1) {
-	        MCUBOOT_LOG_ERR("boot_go() ECHEC code=%d - Signature invalide ?",
-	                        boot_result);
-//	        HAL_Delay(1000);
-	        HAL_UART_Transmit(&huart4, (uint8_t*)msg, strlen(msg), HAL_MAX_DELAY);
-	        HAL_Delay(1000);
-	    }
-//       MCUBOOT_LOG_ERR("boot_go() ÉCHEC (code=%d)", boot_result);
-        /* MCUBOOT_LOG_ERR("Aucune image valide trouvée — système bloqué");
-         MCUBOOT_LOG_ERR("Attente du reset watchdog..."); */
+       MCUBOOT_LOG_ERR("boot_go() ÉCHEC (code=%d)", boot_result);
+       MCUBOOT_LOG_ERR("Aucune image valide trouvée — système bloqué");
+       MCUBOOT_LOG_ERR("Attente du reset watchdog...");
 
          /* Bloquer — le IWDG va resetter dans ~5 secondes */
-//       while (1) {
-//           __NOP();
-//       }
+       while (1) {
+           __NOP();
+       }
    }
 
    /* ----------------------------------------------------------
@@ -195,11 +188,15 @@ int main(void)
                    boot_response.br_hdr->ih_ver.iv_revision);
    MCUBOOT_LOG_INF("Adresse de saut : 0x%08X", app_start);
 
+   MCUBOOT_LOG_INF("SP app        = 0x%08X",
+                   *(volatile uint32_t *)app_start);
+   MCUBOOT_LOG_INF("Reset handler = 0x%08X",
+                   *(volatile uint32_t *)(app_start + 4));
        /* ----------------------------------------------------------
         * 7. Nourrir le watchdog une dernière fois avant le saut
         * ---------------------------------------------------------- */
    HAL_IWDG_Refresh(&hiwdg);
-
+//   HAL_Delay(2000);
        /* ----------------------------------------------------------
         * 8. SAUT VERS L'APPLICATION — aucun retour après cette ligne
         * ---------------------------------------------------------- */
@@ -213,44 +210,48 @@ int main(void)
   * @brief System Clock Configuration
   * @retval None
   */
+
 void SystemClock_Config(void)
 {
-  RCC_OscInitTypeDef RCC_OscInitStruct = {0};
-  RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
+    RCC_OscInitTypeDef RCC_OscInitStruct = {0};
+    RCC_ClkInitTypeDef RCC_ClkInitStruct = {0};
 
-  /** Configure the main internal regulator output voltage
-  */
-  if (HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1) != HAL_OK)
-  {
-    Error_Handler();
-  }
+    /* Voltage scaling Range 1 pour 80 MHz */
+    if (HAL_PWREx_ControlVoltageScaling(PWR_REGULATOR_VOLTAGE_SCALE1) != HAL_OK) {
+        Error_Handler();
+    }
 
-  /** Initializes the RCC Oscillators according to the specified parameters
-  * in the RCC_OscInitTypeDef structure.
-  */
-  RCC_OscInitStruct.OscillatorType = RCC_OSCILLATORTYPE_HSI|RCC_OSCILLATORTYPE_LSI;
-  RCC_OscInitStruct.HSIState = RCC_HSI_ON;
-  RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
-  RCC_OscInitStruct.LSIState = RCC_LSI_ON;
-  RCC_OscInitStruct.PLL.PLLState = RCC_PLL_NONE;
-  if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
-  {
-    Error_Handler();
-  }
+    /* HSI 16 MHz + PLL → 80 MHz */
+    RCC_OscInitStruct.OscillatorType      = RCC_OSCILLATORTYPE_HSI
+                                          | RCC_OSCILLATORTYPE_LSI;
+    RCC_OscInitStruct.HSIState            = RCC_HSI_ON;
+    RCC_OscInitStruct.HSICalibrationValue = RCC_HSICALIBRATION_DEFAULT;
+    RCC_OscInitStruct.LSIState            = RCC_LSI_ON;
+    RCC_OscInitStruct.PLL.PLLState        = RCC_PLL_ON;
+    RCC_OscInitStruct.PLL.PLLSource       = RCC_PLLSOURCE_HSI;
+    RCC_OscInitStruct.PLL.PLLM            = 1;
+    RCC_OscInitStruct.PLL.PLLN            = 10;
+    RCC_OscInitStruct.PLL.PLLP            = RCC_PLLP_DIV7;
+    RCC_OscInitStruct.PLL.PLLQ            = RCC_PLLQ_DIV2;
+    RCC_OscInitStruct.PLL.PLLR            = RCC_PLLR_DIV2;
 
-  /** Initializes the CPU, AHB and APB buses clocks
-  */
-  RCC_ClkInitStruct.ClockType = RCC_CLOCKTYPE_HCLK|RCC_CLOCKTYPE_SYSCLK
-                              |RCC_CLOCKTYPE_PCLK1|RCC_CLOCKTYPE_PCLK2;
-  RCC_ClkInitStruct.SYSCLKSource = RCC_SYSCLKSOURCE_HSI;
-  RCC_ClkInitStruct.AHBCLKDivider = RCC_SYSCLK_DIV1;
-  RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
-  RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+    if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK) {
+        Error_Handler();
+    }
 
-  if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_0) != HAL_OK)
-  {
-    Error_Handler();
-  }
+    /* SYSCLK = PLL = 80 MHz */
+    RCC_ClkInitStruct.ClockType      = RCC_CLOCKTYPE_HCLK
+                                     | RCC_CLOCKTYPE_SYSCLK
+                                     | RCC_CLOCKTYPE_PCLK1
+                                     | RCC_CLOCKTYPE_PCLK2;
+    RCC_ClkInitStruct.SYSCLKSource   = RCC_SYSCLKSOURCE_PLLCLK;
+    RCC_ClkInitStruct.AHBCLKDivider  = RCC_SYSCLK_DIV1;
+    RCC_ClkInitStruct.APB1CLKDivider = RCC_HCLK_DIV1;
+    RCC_ClkInitStruct.APB2CLKDivider = RCC_HCLK_DIV1;
+
+    if (HAL_RCC_ClockConfig(&RCC_ClkInitStruct, FLASH_LATENCY_4) != HAL_OK) {
+        Error_Handler();
+    }
 }
 
 /* USER CODE BEGIN 4 */

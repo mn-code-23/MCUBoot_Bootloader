@@ -7,6 +7,8 @@
 #ifndef MCUBOOT_CONFIG_H
 #define MCUBOOT_CONFIG_H
 
+#define MCUBOOT_HAVE_LOGGING     1    /* Mettre à 0 en production */
+
 #include "mcuboot_logging.h"
 
 /* ================================================================
@@ -73,7 +75,6 @@
  * Activer pendant le développement, DÉSACTIVER en production
  * pour réduire la taille et supprimer les informations sensibles
  * ================================================================ */
-#define MCUBOOT_HAVE_LOGGING     1    /* Mettre à 0 en production */
 
 /* ================================================================
  * 9. ASSERT

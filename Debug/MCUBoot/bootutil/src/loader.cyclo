@@ -6,10 +6,10 @@
 ../MCUBoot/bootutil/src/loader.c:393:1:boot_status_is_reset	4
 ../MCUBoot/bootutil/src/loader.c:414:1:boot_write_status	2
 ../MCUBoot/bootutil/src/loader.c:464:1:split_image_check	6
-../MCUBoot/bootutil/src/loader.c:541:1:boot_validate_slot	11
+../MCUBoot/bootutil/src/loader.c:541:1:boot_validate_slot	13
 ../MCUBoot/bootutil/src/loader.c:728:1:boot_validated_swap_type	7
 ../MCUBoot/bootutil/src/loader.c:792:1:boot_copy_region	5
-../MCUBoot/bootutil/src/loader.c:1124:1:boot_swap_image	5
+../MCUBoot/bootutil/src/loader.c:1124:1:boot_swap_image	6
 ../MCUBoot/bootutil/src/loader.c:1251:1:boot_perform_update	8
 ../MCUBoot/bootutil/src/loader.c:1330:1:boot_complete_partial_swap	8
 ../MCUBoot/bootutil/src/loader.c:1442:1:boot_prepare_image_for_update	9

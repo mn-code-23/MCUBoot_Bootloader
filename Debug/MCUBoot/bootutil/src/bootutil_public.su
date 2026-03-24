@@ -14,11 +14,11 @@
 ../MCUBoot/bootutil/src/bootutil_public.c:303:1:boot_write_magic	56	static
 ../MCUBoot/bootutil/src/bootutil_public.c:345:1:boot_write_trailer	48	static
 ../MCUBoot/bootutil/src/bootutil_public.c:377:1:boot_write_trailer_flag	32	static
-../MCUBoot/bootutil/src/bootutil_public.c:385:1:boot_write_image_ok	24	static
+../MCUBoot/bootutil/src/bootutil_public.c:385:1:boot_write_image_ok	32	static
 ../MCUBoot/bootutil/src/bootutil_public.c:397:1:boot_read_image_ok	16	static
-../MCUBoot/bootutil/src/bootutil_public.c:408:1:boot_write_swap_info	24	static
+../MCUBoot/bootutil/src/bootutil_public.c:408:1:boot_write_swap_info	40	static
 ../MCUBoot/bootutil/src/bootutil_public.c:425:1:boot_swap_type_multi	48	static
-../MCUBoot/bootutil/src/bootutil_public.c:495:1:boot_write_copy_done	24	static
+../MCUBoot/bootutil/src/bootutil_public.c:495:1:boot_write_copy_done	32	static
 ../MCUBoot/bootutil/src/bootutil_public.c:508:12:flash_area_to_image	16	static
 ../MCUBoot/bootutil/src/bootutil_public.c:528:1:boot_set_next	32	static
 ../MCUBoot/bootutil/src/bootutil_public.c:670:1:boot_swap_type	8	static
@@ -26,4 +26,4 @@
 ../MCUBoot/bootutil/src/bootutil_public.c:720:1:boot_set_pending	16	static
 ../MCUBoot/bootutil/src/bootutil_public.c:735:1:boot_set_confirmed_multi	24	static
 ../MCUBoot/bootutil/src/bootutil_public.c:762:1:boot_set_confirmed	8	static
-../MCUBoot/bootutil/src/bootutil_public.c:768:1:boot_image_load_header	24	static
+../MCUBoot/bootutil/src/bootutil_public.c:768:1:boot_image_load_header	32	static

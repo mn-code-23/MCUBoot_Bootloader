@@ -1,6 +1,6 @@
 ../MCUBoot/bootutil/src/bootutil_area.c:85:1:boot_status_sz	0	static
 ../MCUBoot/bootutil/src/bootutil_area.c:91:1:boot_trailer_sz	0	static
 ../MCUBoot/bootutil/src/bootutil_area.c:161:1:boot_trailer_scramble_offset	24	static
-../MCUBoot/bootutil/src/bootutil_area.c:196:1:boot_erase_region	40	static
-../MCUBoot/bootutil/src/bootutil_area.c:295:1:boot_scramble_region	4	static
+../MCUBoot/bootutil/src/bootutil_area.c:196:1:boot_erase_region	48	static
+../MCUBoot/bootutil/src/bootutil_area.c:295:1:boot_scramble_region	32	static
 ../MCUBoot/bootutil/src/bootutil_area.c:364:1:boot_scramble_slot	8	static

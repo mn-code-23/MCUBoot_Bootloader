@@ -1,8 +1,8 @@
-../MCUBoot/flash_map_backend/flash_map_backend.c:94:5:flash_area_open	0	static
+../MCUBoot/flash_map_backend/flash_map_backend.c:94:5:flash_area_open	8	static
 ../MCUBoot/flash_map_backend/flash_map_backend.c:118:6:flash_area_close	0	static
 ../MCUBoot/flash_map_backend/flash_map_backend.c:131:5:flash_area_read	16	static
 ../MCUBoot/flash_map_backend/flash_map_backend.c:156:5:flash_area_write	24	static
-../MCUBoot/flash_map_backend/flash_map_backend.c:244:5:flash_area_erase	40	static
+../MCUBoot/flash_map_backend/flash_map_backend.c:244:5:flash_area_erase	56	static
 ../MCUBoot/flash_map_backend/flash_map_backend.c:321:10:flash_area_align	0	static
 ../MCUBoot/flash_map_backend/flash_map_backend.c:332:10:flash_area_erased_val	0	static
 ../MCUBoot/flash_map_backend/flash_map_backend.c:350:10:flash_area_get_off	0	static
@@ -12,8 +12,8 @@
 ../MCUBoot/flash_map_backend/flash_map_backend.c:374:10:flash_sector_get_off	0	static
 ../MCUBoot/flash_map_backend/flash_map_backend.c:379:10:flash_sector_get_size	0	static
 ../MCUBoot/flash_map_backend/flash_map_backend.c:392:5:flash_area_get_sector	0	static
-../MCUBoot/flash_map_backend/flash_map_backend.c:416:5:flash_area_get_sectors	16	static
-../MCUBoot/flash_map_backend/flash_map_backend.c:459:5:flash_area_id_from_multi_image_slot_hook	0	static
+../MCUBoot/flash_map_backend/flash_map_backend.c:416:5:flash_area_get_sectors	32	static
+../MCUBoot/flash_map_backend/flash_map_backend.c:459:5:flash_area_id_from_multi_image_slot_hook	8	static
 ../MCUBoot/flash_map_backend/flash_map_backend.c:485:5:flash_area_id_from_multi_image_slot	16	static
-../MCUBoot/flash_map_backend/flash_map_backend.c:496:5:flash_area_to_sectors	20	static
+../MCUBoot/flash_map_backend/flash_map_backend.c:496:5:flash_area_to_sectors	32	static
 ../MCUBoot/flash_map_backend/flash_map_backend.c:537:5:flash_area_id_from_image_slot	0	static
