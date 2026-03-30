@@ -4,8 +4,8 @@
 ../MCUBoot/bootutil/src/bootutil_loader.c:70:1:boot_check_header_valid	32	static
 ../MCUBoot/bootutil/src/bootutil_loader.c:130:1:boot_read_image_headers	32	static
 ../MCUBoot/bootutil/src/bootutil_loader.c:161:1:boot_check_image	56	static,ignoring_inline_asm
-../MCUBoot/bootutil/src/bootutil_loader.c:200:1:boot_compare_version	40	static
+../MCUBoot/bootutil/src/bootutil_loader.c:200:1:boot_compare_version	16	static
 ../MCUBoot/bootutil/src/bootutil_loader.c:276:1:boot_add_shared_data	16	static
-../MCUBoot/bootutil/src/bootutil_loader.c:313:1:boot_open_all_flash_areas	40	static
+../MCUBoot/bootutil/src/bootutil_loader.c:313:1:boot_open_all_flash_areas	32	static
 ../MCUBoot/bootutil/src/bootutil_loader.c:360:1:boot_close_all_flash_areas	24	static
 ../MCUBoot/bootutil/src/bootutil_loader.c:385:6:boot_state_init	16	static

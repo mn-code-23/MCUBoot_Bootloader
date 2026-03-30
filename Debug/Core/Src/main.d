@@ -34,8 +34,6 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
  ../Core/Src/../../MCUBoot/bootutil/include/bootutil/bootutil.h \
  ../Core/Src/../../MCUBoot/bootutil/include/bootutil/fault_injection_hardening.h \
  ../Core/Src/../../MCUBoot/bootutil/include/bootutil/../../../mcuboot_config/mcuboot_config.h \
- ../Core/Src/../../MCUBoot/bootutil/include/bootutil/../../../mcuboot_config/mcuboot_logging.h \
- ../Core/Src/../../MCUBoot/bootutil/include/bootutil/../../../mcuboot_config/mcuboot_watchdog.h \
  ../Core/Src/../../MCUBoot/bootutil/include/bootutil/bootutil_public.h \
  ../Core/Src/../../MCUBoot/bootutil/include/bootutil/../../../flash_map_backend/flash_map_backend.h \
  ../Core/Src/../../MCUBoot/bootutil/include/bootutil/../../../flash_map_backend/../bootutil/include/sysflash/sysflash.h \
@@ -83,8 +81,6 @@ Core/Src/main.o: ../Core/Src/main.c ../Core/Inc/main.h \
 ../Core/Src/../../MCUBoot/bootutil/include/bootutil/bootutil.h:
 ../Core/Src/../../MCUBoot/bootutil/include/bootutil/fault_injection_hardening.h:
 ../Core/Src/../../MCUBoot/bootutil/include/bootutil/../../../mcuboot_config/mcuboot_config.h:
-../Core/Src/../../MCUBoot/bootutil/include/bootutil/../../../mcuboot_config/mcuboot_logging.h:
-../Core/Src/../../MCUBoot/bootutil/include/bootutil/../../../mcuboot_config/mcuboot_watchdog.h:
 ../Core/Src/../../MCUBoot/bootutil/include/bootutil/bootutil_public.h:
 ../Core/Src/../../MCUBoot/bootutil/include/bootutil/../../../flash_map_backend/flash_map_backend.h:
 ../Core/Src/../../MCUBoot/bootutil/include/bootutil/../../../flash_map_backend/../bootutil/include/sysflash/sysflash.h:

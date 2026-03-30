@@ -1,0 +1,5 @@
+../MCUBoot/bootutil/src/../../crypto/mbedtls/include/psa/crypto_struct.h:383:20:psa_extend_key_usage_flags	16	static
+../MCUBoot/bootutil/src/../../crypto/mbedtls/include/psa/crypto_struct.h:394:20:psa_set_key_usage_flags	16	static
+../MCUBoot/bootutil/src/../../crypto/mbedtls/include/psa/crypto_struct.h:407:20:psa_set_key_algorithm	16	static
+../MCUBoot/bootutil/src/../../crypto/mbedtls/include/psa/crypto_struct.h:419:20:psa_set_key_type	16	static
+../MCUBoot/bootutil/src/ed25519_psa.c:22:5:ED25519_verify	72	static

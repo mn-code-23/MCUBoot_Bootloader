@@ -14,7 +14,7 @@
 ../MCUBoot/bootutil/src/loader.c:1330:1:boot_complete_partial_swap	24	static
 ../MCUBoot/bootutil/src/loader.c:1442:1:boot_prepare_image_for_update	24	static,ignoring_inline_asm
 ../MCUBoot/bootutil/src/loader.c:1611:1:boot_update_hw_rollback_protection	16	static
-../MCUBoot/bootutil/src/loader.c:1672:1:check_downgrade_prevention	16	static
+../MCUBoot/bootutil/src/loader.c:1672:1:check_downgrade_prevention	40	static
 ../MCUBoot/bootutil/src/loader.c:1716:1:context_boot_go	56	static,ignoring_inline_asm
 ../MCUBoot/bootutil/src/loader.c:1991:1:split_go	56	static,ignoring_inline_asm
 ../MCUBoot/bootutil/src/loader.c:2478:1:boot_go	24	static,ignoring_inline_asm

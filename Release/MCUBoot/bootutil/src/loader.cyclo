@@ -5,7 +5,7 @@
 ../MCUBoot/bootutil/src/loader.c:1124:1:boot_swap_image.isra	6
 ../MCUBoot/bootutil/src/loader.c:414:1:boot_write_status	1
 ../MCUBoot/bootutil/src/loader.c:792:1:boot_copy_region	4
-../MCUBoot/bootutil/src/loader.c:1716:1:context_boot_go	32
+../MCUBoot/bootutil/src/loader.c:1716:1:context_boot_go	35
 ../MCUBoot/bootutil/src/loader.c:1991:1:split_go	9
 ../MCUBoot/bootutil/src/loader.c:2478:1:boot_go	1
 ../MCUBoot/bootutil/src/loader.c:2503:1:boot_go_for_image_id	2

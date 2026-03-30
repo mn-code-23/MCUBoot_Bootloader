@@ -17,7 +17,7 @@
 ../MCUBoot/bootutil/src/bootutil_public.c:385:1:boot_write_image_ok	1
 ../MCUBoot/bootutil/src/bootutil_public.c:397:1:boot_read_image_ok	1
 ../MCUBoot/bootutil/src/bootutil_public.c:408:1:boot_write_swap_info	1
-../MCUBoot/bootutil/src/bootutil_public.c:425:1:boot_swap_type_multi	20
+../MCUBoot/bootutil/src/bootutil_public.c:425:1:boot_swap_type_multi	18
 ../MCUBoot/bootutil/src/bootutil_public.c:495:1:boot_write_copy_done	1
 ../MCUBoot/bootutil/src/bootutil_public.c:508:12:flash_area_to_image	1
 ../MCUBoot/bootutil/src/bootutil_public.c:528:1:boot_set_next	14

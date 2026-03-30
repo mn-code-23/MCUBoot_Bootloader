@@ -216,7 +216,7 @@
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="MCUBoot/bootutil/include"/>
-						<entry excluding="swap_scratch.c|swap_offset.c|ram_load.c|image_rsa.c|image_ed25519.c|fault_injection_hardening_delay_rng_mbedtls.c|encrypted_psa.c|ed25519_psa.c|bootutil_img_security_cnt.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="MCUBoot/bootutil/src"/>
+						<entry excluding="encrypted_psa.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="MCUBoot/bootutil/src"/>
 						<entry excluding="mbedtls/library/pkwrite.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="MCUBoot/crypto"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="MCUBoot/flash_map_backend"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="MCUBoot/mcuboot_config"/>
@@ -304,7 +304,7 @@
 					<sourceEntries>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
-						<entry excluding="swap_scratch.c|swap_offset.c|ram_load.c|image_rsa.c|image_ed25519.c|fault_injection_hardening_delay_rng_mbedtls.c|encrypted_psa.c|ed25519_psa.c|bootutil_img_security_cnt.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="MCUBoot/bootutil/src"/>
+						<entry excluding="encrypted_psa.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="MCUBoot/bootutil/src"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="MCUBoot/crypto/mbedtls/library"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="MCUBoot/flash_map_backend"/>
 					</sourceEntries>

@@ -3,8 +3,7 @@ MCUBoot/flash_map_backend/flash_map_backend.o: \
  ../MCUBoot/flash_map_backend/flash_map_backend.h \
  ../MCUBoot/flash_map_backend/../bootutil/include/sysflash/sysflash.h \
  ../MCUBoot/flash_map_backend/../bootutil/include/sysflash/../../../mcuboot_config/mcuboot_config.h \
- ../MCUBoot/flash_map_backend/../bootutil/include/sysflash/../../../mcuboot_config/mcuboot_logging.h \
- ../MCUBoot/flash_map_backend/../bootutil/include/sysflash/../../../mcuboot_config/mcuboot_watchdog.h \
+ ../Core/Inc/iwdg.h ../Core/Inc/main.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h \
  ../Core/Inc/stm32l4xx_hal_conf.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h \
@@ -35,12 +34,12 @@ MCUBoot/flash_map_backend/flash_map_backend.o: \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h \
  ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h \
- E:/STM32/MCUBoot_Bootloader/MCUBoot/mcuboot_config/mcuboot_config.h
+ ../MCUBoot/flash_map_backend/../mcuboot_config/mcuboot_config.h
 ../MCUBoot/flash_map_backend/flash_map_backend.h:
 ../MCUBoot/flash_map_backend/../bootutil/include/sysflash/sysflash.h:
 ../MCUBoot/flash_map_backend/../bootutil/include/sysflash/../../../mcuboot_config/mcuboot_config.h:
-../MCUBoot/flash_map_backend/../bootutil/include/sysflash/../../../mcuboot_config/mcuboot_logging.h:
-../MCUBoot/flash_map_backend/../bootutil/include/sysflash/../../../mcuboot_config/mcuboot_watchdog.h:
+../Core/Inc/iwdg.h:
+../Core/Inc/main.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal.h:
 ../Core/Inc/stm32l4xx_hal_conf.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_rcc.h:
@@ -71,4 +70,4 @@ MCUBoot/flash_map_backend/flash_map_backend.o: \
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_pwr_ex.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart.h:
 ../Drivers/STM32L4xx_HAL_Driver/Inc/stm32l4xx_hal_uart_ex.h:
-E:/STM32/MCUBoot_Bootloader/MCUBoot/mcuboot_config/mcuboot_config.h:
+../MCUBoot/flash_map_backend/../mcuboot_config/mcuboot_config.h:

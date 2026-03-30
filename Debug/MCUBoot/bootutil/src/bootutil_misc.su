@@ -7,7 +7,7 @@
 ../MCUBoot/bootutil/src/bootutil_misc.c:123:1:boot_status_off	24	static
 ../MCUBoot/bootutil/src/bootutil_misc.c:166:1:boot_find_status	48	static
 ../MCUBoot/bootutil/src/bootutil_misc.c:207:1:boot_read_swap_size	24	static
-../MCUBoot/bootutil/src/bootutil_misc.c:295:1:boot_write_swap_size	32	static
+../MCUBoot/bootutil/src/bootutil_misc.c:295:1:boot_write_swap_size	24	static
 ../MCUBoot/bootutil/src/bootutil_misc.c:352:10:bootutil_max_image_size	16	static
 ../MCUBoot/bootutil/src/bootutil_misc.c:384:1:boot_read_image_size	56	static
 ../MCUBoot/bootutil/src/bootutil_misc.c:436:1:boot_initialize_area	32	static

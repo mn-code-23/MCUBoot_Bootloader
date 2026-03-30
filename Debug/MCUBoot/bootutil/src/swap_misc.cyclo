@@ -1,6 +1,6 @@
 ../MCUBoot/bootutil/src/bootutil_priv.h:455:1:boot_img_num_sectors	1
-../MCUBoot/bootutil/src/bootutil_priv.h:472:1:boot_img_sector_size	1
-../MCUBoot/bootutil/src/bootutil_priv.h:483:1:boot_img_sector_off	1
+../MCUBoot/bootutil/src/bootutil_priv.h:493:1:boot_img_sector_size	1
+../MCUBoot/bootutil/src/bootutil_priv.h:500:1:boot_img_sector_off	1
 ../MCUBoot/bootutil/src/swap_misc.c:36:1:swap_erase_trailer_sectors	3
 ../MCUBoot/bootutil/src/swap_misc.c:78:1:swap_scramble_trailer_sectors	3
 ../MCUBoot/bootutil/src/swap_misc.c:107:1:swap_status_init	3

@@ -1,0 +1,1 @@
+../MCUBoot/bootutil/src/ed25519_psa.c:22:5:ED25519_verify	64	static
